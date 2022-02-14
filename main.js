@@ -3,6 +3,7 @@
 
 * -Change the background color by generating random hex color by clicking a button
 * Also display the hex color code
+* Add copy button
 */
 
 // Steps
@@ -21,17 +22,22 @@ window.onload = () => {
 
 function main() {
   const root = document.getElementById("root");
-  const btn = document.getElementById("change-btn");
+  const changeBtn = document.getElementById("change-btn");
   const output = document.getElementById("output");
+  const copyBtn = document.getElementById("copy-btn");
 
-  btn.addEventListener("click", function () {
-    const rgbBg = generateRGBColor();
-    root.style.backgroundColor = rgbBg;
-    output.value = rgbBg;
+  changeBtn.addEventListener("click", function () {
+    const hexBg = generateHEXColor();
+    root.style.backgroundColor = hexBg;
+    output.value = hexBg;
+  });
+  copyBtn.addEventListener("click", function () {
+    alert("Color code is copied")
+    navigator.clipboard.writeText(output.value);
   });
 }
 
-function generateRGBColor() {
+function generateHEXColor() {
   const red = Math.floor(Math.random() * 255);
   const green = Math.floor(Math.random() * 255);
   const blue = Math.floor(Math.random() * 255);

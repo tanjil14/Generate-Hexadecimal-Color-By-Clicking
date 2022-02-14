@@ -1,7 +1,8 @@
 # Project Requirements:
 
 * -Change the background color by generating random hex color by clicking a button
-* Also display the hex color code
+* Display the hex color code
+* Add copy Button
 
 
 ## Steps
